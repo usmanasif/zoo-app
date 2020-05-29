@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_29_105252) do
+ActiveRecord::Schema.define(version: 2020_05_29_162848) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,11 +21,7 @@ ActiveRecord::Schema.define(version: 2020_05_29_105252) do
     t.bigint "zoo_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "tag"
-    t.string "bio"
-    t.index ["bio"], name: "index_animals_on_bio"
     t.index ["description"], name: "index_animals_on_description"
-    t.index ["tag"], name: "index_animals_on_tag"
     t.index ["zoo_id"], name: "index_animals_on_zoo_id"
   end
 
