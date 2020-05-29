@@ -10,7 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_28_104644) do
+ActiveRecord::Schema.define(version: 2020_05_29_051057) do
+
+  create_table "animals", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.integer "zoo_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["zoo_id"], name: "index_animals_on_zoo_id"
+  end
+
+  create_table "uploads", force: :cascade do |t|
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.bigint "image_file_size"
+    t.datetime "image_updated_at"
+    t.string "uploadable_type"
+    t.integer "uploadable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["uploadable_type", "uploadable_id"], name: "index_uploads_on_uploadable_type_and_uploadable_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -20,8 +41,23 @@ ActiveRecord::Schema.define(version: 2020_05_28_104644) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.bigint "image_file_size"
+    t.datetime "image_updated_at"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "zoos", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.string "address2"
+    t.string "city"
+    t.string "state"
+    t.string "zip"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
