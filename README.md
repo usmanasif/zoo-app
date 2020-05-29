@@ -1,24 +1,29 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby: 2.6.2
 
-Things you may want to cover:
+Rails: 5.2.4
 
-* Ruby version
+Database: Postgresql
 
-* System dependencies
+File Storage: S3
 
-* Configuration
+# Setup Instructions
 
-* Database creation
+1) Set the environment variables in application.yml
 
-* Database initialization
+2) Set the database credentials in database.yml
 
-* How to run the test suite
+3) Install gems. Run `bundle install`
 
-* Services (job queues, cache servers, search engines, etc.)
+4) `bundle exec rake db:create db:migrate`
 
-* Deployment instructions
+5) `bundle exec rails s`
 
-* ...
+6) Done
+
+You can access admin panel localhost:3000/admin
+
+Zoos will be list on root page localhost:3000. `List Aniamls` is link to list all animals of given zoo. Google map with zoo address will be shown there on animals page.
+
+Thank You!
