@@ -12,10 +12,13 @@
 
 ActiveRecord::Schema.define(version: 2020_05_29_105252) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "animals", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.integer "zoo_id"
+    t.bigint "zoo_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "tag"
@@ -32,7 +35,7 @@ ActiveRecord::Schema.define(version: 2020_05_29_105252) do
     t.bigint "image_file_size"
     t.datetime "image_updated_at"
     t.string "uploadable_type"
-    t.integer "uploadable_id"
+    t.bigint "uploadable_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["uploadable_type", "uploadable_id"], name: "index_uploads_on_uploadable_type_and_uploadable_id"
@@ -46,10 +49,6 @@ ActiveRecord::Schema.define(version: 2020_05_29_105252) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "image_file_name"
-    t.string "image_content_type"
-    t.bigint "image_file_size"
-    t.datetime "image_updated_at"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
