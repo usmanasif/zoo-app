@@ -1,0 +1,24 @@
+<table id="animals-table" class="table table-hover">
+  <thead>
+    <tr>
+      <th> Image</th>
+      <th> Name</th>
+      <th> Description</th>
+      <th> Tag</th>
+      <th> Bio</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @animals.each do |animal| %>
+      <tr>
+        <td>
+          <%= image_tag (animal.image.url(:medium)) if animal.image %>
+        </td>
+        <td><%=animal.name%></td>
+        <td><%=animal.description%></td>
+        <td><%=animal.tag%></td>
+        <td><%=animal.bio%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
