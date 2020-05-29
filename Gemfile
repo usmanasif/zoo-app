@@ -42,6 +42,8 @@ gem 'jquery-rails'
 gem 'rails_admin', '~> 2.0'
 gem 'paperclip'
 gem 'jquery-datatables'
+gem 'figaro'
+gem 'aws-sdk-s3', '~> 1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
